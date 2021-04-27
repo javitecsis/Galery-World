@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7ee159df6f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Portafolio Dinámico - javidev </title>
 </head>
@@ -17,34 +18,119 @@
                 <p>Frontend Developer</p>
             </div>
             <form action="" class="form">
-                <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+                <input type="search" class="barra-busqueda" id="barra-busqueda" placeholder ="Buscar">
             </form>
             <div class="categorias" id="categorias">
                 <a href="#" class="activo" >Todos</a>
-                <a href="#" >Naturaleza</a>
-                <a href="#" >Ciudades</a>
-                <a href="#" >Personas</a>
-                <a href="#" >Animales</a>
+                <a href="#" >Proyectos</a>
+                <a href="#" >Aportes</a>
+                <a href="#" >Blog</a>
+                <a href="#" >Comunicación</a>
+                <div class="element">
+                    <div class="onOff" onclick="onOff()">
+                    <div class="clickOnOrOff"></div>                                       
+                </div>                
             </div>
         </header>
-        <section class="grid">
-            <div class="item">
+        <section class="grid" id="grid">
+            <div class="item" 
+                 data-categoria="proyectos" 
+                 data-etiquetas="ecomerce tienda artesanias"
+                 data-descripcion="1.-alumbrado"
+                 >
                 <div class="item-contenido">
-                    <img src="img/sea-164989_1280.jpg" alt="">
+                    <a href="https://art-hispano.web.app/"><img src="img/Logo.png" alt="" ></a>                                       
                 </div>
             </div>
-            <div class="item">
+            <div class="item" 
+                 data-categoria="proyectos" 
+                 data-etiquetas="platzi nieve paisaje"
+                 data-descripcion="2.=naturaleza nieve"
+                 >
                 <div class="item-contenido">
-                    <img src="img/sea-164989_1280.jpg" alt="">
+                    <a href="https://github.com/javitecsis/PlatziVideoTwo"><img src="img/city2.jpg" alt=""></a>
                 </div>
             </div>
-            <div class="item">
+             <div class="item" 
+                 data-categoria="aportes" 
+                 data-etiquetas="sol nubes paisaje agua"
+                 data-descripcion="3.= naturaleza"
+                 >
                 <div class="item-contenido">
-                    <img src="img/baby-1150109_640.jpg" alt="">
+                    <img src="img/city3.jpg" alt="">
+                </div>
+            </div>
+             <div class="item" 
+                 data-categoria="aportes" 
+                 data-etiquetas="cielo paisaje agua"
+                 data-descripcion="4.naturaleza"
+                 >
+                <div class="item-contenido">
+                    <img src="img/city4.jpg" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                 data-categoria="aportes" 
+                 data-etiquetas="cielo paisaje agua"
+                 data-descripcion="5.naturaleza"
+                 >
+                <div class="item-contenido">
+                    <img src="img/city5.jpg" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                 data-categoria="blog" 
+                 data-etiquetas="ciudades agua"
+                 data-descripcion="6.naturaleza"
+                 >
+                <div class="item-contenido">
+                    <img src="img/city6.jpg" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                 data-categoria="blog" 
+                 data-etiquetas="personas humanidad union "
+                 data-descripcion="7.transformación"
+                 >
+                <div class="item-contenido">
+                    <img src="img/Person1.jpg" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                 data-categoria="comunicación" 
+                 data-etiquetas="diversidad agua humanidad"
+                 data-descripcion="8.colores"
+                 >
+                <div class="item-contenido">
+                    <img src="img/Person2.jpg" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                 data-categoria="comunicación" 
+                 data-etiquetas="familia bebe diversidad"
+                 data-descripcion="10.diversidad"
+                 >
+                <div class="item-contenido">
+                    <img src="img/Person4.jpg" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                 data-categoria="comunicación" 
+                 data-etiquetas="naturaleza caballo paisaje"
+                 data-descripcion="11.animales"
+                 >
+                <div class="item-contenido">
+                    <img src="img/hours.jpg" alt="">
                 </div>
             </div>
         </section>
-        
+        <section class="overlay activo" id="overlay">
+            <div class="contenedor-img">
+                <button><i class="fas fa-times"></i></button>
+                <img src="img/Logo.png" alt="">
+            </div>
+                <p class="descripcion">Ver Proyecto . . .</p>
+        </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.3/dist/muuri.min.js"></script>

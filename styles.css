@@ -1,3 +1,7 @@
+:root {
+	--white: #fff;
+	--black: #000;
+}
 * {
     margin: 0px;
     padding: 0px;
@@ -7,11 +11,7 @@
 body {
     width: 100vw;
     height: 80vw;
-    background: cornsilk;
-    /* background-image: linear-gradient(341deg, #FFE53B 0%, #ff7325 18%, #423a3a 49%, #0b0501 75%, #ffffff 100%);
-    font-family: 'Open Sans', sans-serif;
-    background-repeat: no-repeat;
-    background-size: cover; */
+    background-color: var(--white);
 }
 a {
     text-decoration: none;
@@ -34,6 +34,7 @@ header {
 header .logo {
     text-align: center;
     margin-bottom: 40px;
+    color: orange
 }
 header .logo p {
     color: #9b9b9b;
@@ -45,13 +46,14 @@ header form {
     margin-bottom: 20px;
 }
 header .barra-busqueda {
+    outline: none;
+    display: block;
     width: 70%;
     height: 40px;
     line-height: 40px;
-    background: #fff;
     padding: 0 20px;
+    border: 1px solid rgba(73, 73, 73, 0.5);
     border-radius: 100px;
-    border: none;
     text-align: center;
     font-size: 16px;
 }
@@ -67,14 +69,56 @@ header .categorias a {
     font-weight: 700;
 }
 header .categorias a.activo {
-    color: #000;
+    color: orange;
 }
+
+/* ------------------ */
+/* DarkMode */
+/* ------------------ */
+
+.element {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.onOff {
+	display: flex;
+	height: 20px;
+	width: 40px;
+	border-radius: 20px;
+	background-clip: border-box;
+    background-color: #000;
+	justify-content: flex-start;
+}
+.clickOnOrOff {
+	height: 20px;
+	width: 20px;
+	border-radius: 10px;
+	background: orange;
+    cursor: pointer;
+ 	opacity: 0.6;
+	transition: all 0.5s cubic-bezier(0.32, 0.58, 0.12, 0.97);
+}
+.d-right {
+	transform: translateX(30px);
+	opacity: 20;
+}
+
+
+
+/*------------------------*/
+/*------ Grid ------------*/
+/*------------------------*/
 
 .grid {
     position: relative;
     width: 100%;
-    /*  */
-    /*  */
+    /* opacity: 0; */
+    transition: opacity 0.5s linear 1s;
+}
+
+.grid .imagenes-cargadas{
+    opacity: 1;
 }
 
 .grid .item {
@@ -82,7 +126,7 @@ header .categorias a.activo {
     display: block;
     padding: 0;
     margin: 10px;
-    /* width: calc(33.33%-20px); */
+    width: calc(33.333333% - 28px);
     border-radius: 10px;
 }
 
@@ -90,7 +134,46 @@ header .categorias a.activo {
     position: relative;
 }
 
-.grid .item img {
+.grid .item img{
     width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    vertical-align: top;
 }
 
+/*------------------------*/
+/*------ Overlay ------------*/
+/*------------------------*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.9);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.overlay.activo {
+    display: flex;
+}
+
+.overlay img {
+    max-width: 100%;
+}
+
+.overlay .descripcion {
+    display: block;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    max-width: 100%;
+}
