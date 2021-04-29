@@ -14,10 +14,10 @@ function onOff() {
 			.getElementsByClassName("clickOnOrOff")[0]
 			.classList.remove("d-right");
 		donen.style.setProperty("--white", "#fff");
-		donen.style.setProperty("--black", "#000");
+		donen.style.setProperty("--black", "#0d1117");
 	} else {
 		document.getElementsByClassName("clickOnOrOff")[0].classList.add("d-right");
-		donen.style.setProperty("--white", "#000");
+		donen.style.setProperty("--white", "#0d1117");
 		donen.style.setProperty("--black", "#fff");
 	}
 };
