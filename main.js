@@ -5,7 +5,7 @@ const grid = new Muuri('.grid', {
 });
 
 
-// Se agrega la barra de darkMode
+// Se agrega boton de darkMode
 
 var donen = document.querySelector(":root");
 function onOff() {
@@ -49,5 +49,29 @@ document.querySelector('#barra-busqueda').addEventListener('input', (evento) =>{
     grid.filter((item) => item.getElement().dataset.etiquetas.includes(busqueda));
 
 });
+
+// Agregamos un listener para las imagenes
+const overlay = document.getElementById('overlay');
+document.querySelectorAll('.grid .item img').forEach((elemento) => {
+        elemento.addEventListener('click', () => {
+            const ruta = elemento.getAttribute('src');
+            const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
+            overlay.classList.add('activo');
+            document.querySelector('#overlay img').src = ruta;
+            document.querySelector('#overlay .descripcion').innerHTML = descripcion;
+    }); 
+    });
+    //Eventlisterner del boton de cewrrar
+   document.querySelector('#btn-cerrar-popup').addEventListener('click', () => {
+    overlay.classList.remove('activo');        
+ });
+
+ //Evelistener de overlay
+
+    overlay.addEventListener('click', (evento) => {
+        console.log(evento.target.id === 'overley');
+
+    });
 });
+
 
