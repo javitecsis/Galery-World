@@ -7,13 +7,16 @@
 body {
     width: 100vw;
     height: 80vw;
-    background-color: var(--white);
+    background-repeat: no-repeat;
+    background-color: #a34f11;
+    background-image: linear-gradient(1deg, #a34f11 0%, #33222c 66%, #07070a 100%);
+
 }
 a {
     text-decoration: none;
 }
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     margin: auto;
     align-items: center;
@@ -30,18 +33,33 @@ header {
 header .logo {
     text-align: center;
     margin-bottom: 40px;
-    color: orange
+    color: orange;
+    text-shadow: 4px 4px 16px rgb(255 0 255 / 45%)
 }
 header .logo p {
-    color: #9b9b9b;
+    font-size: 18px;
+    text-shadow: 4px 4px 16px rgb(255 0 255 / 45%)
 }
+
+.container-int{
+    text-align: center;
+}
+
+.lema-interactivo {
+    color: orange;
+    font-size: 18px;
+    width: 60%;
+}
+
 header form {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
+
 header .barra-busqueda {
+    align-items: center;
     outline: none;
     display: block;
     width: 70%;
@@ -53,13 +71,14 @@ header .barra-busqueda {
     text-align: center;
     font-size: 16px;
 }
-header .categorias {
+header .categorias {    
+    align-items: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 header .categorias a {
-    color: #9b9b9b;
+    color: white;
     margin: 10px 20px;
     font-size: 18px;
     font-weight: 700;
@@ -68,40 +87,6 @@ header .categorias a.activo {
     color: orange;
 }
 
-/* ------------------ */
-/* DarkMode */
-/* ------------------ */
-
-.element {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.onOff {
-	display: flex;
-	height: 20px;
-	width: 40px;
-	border-radius: 20px;
-	background-clip: border-box;
-    background-color: #000;
-	justify-content: flex-start;
-}
-.clickOnOrOff {
-	height: 20px;
-	width: 20px;
-	border-radius: 10px;
-	background: orange;
-    cursor: pointer;
- 	opacity: 0.6;
-	transition: all 0.5s cubic-bezier(0.32, 0.58, 0.12, 0.97);
-}
-.d-right {
-	transform: translateX(30px);
-	opacity: 20;
-}
-
-
-
 /*------------------------*/
 /*------ Grid ------------*/
 /*------------------------*/
@@ -109,7 +94,6 @@ header .categorias a.activo {
 .grid {
     position: relative;
     width: 100%;
-    /* opacity: 0; */
     transition: opacity 0.5s linear 1s;
 }
 
@@ -120,10 +104,12 @@ header .categorias a.activo {
 .grid .item {
     position: absolute;
     display: block;
+    text-align: center;
     padding: 0;
     margin: 10px;
     width: calc(33.333333% - 28px);
     border-radius: 10px;
+    color:white;
 }
 
 .grid .item-contenido {
@@ -162,20 +148,28 @@ header .categorias a.activo {
 
 .overlay img {
     max-width: 100%;
+    border-radius: 10px;
 }
 
 .overlay .descripcion {
+    max-width: 100%;
     display: block;
     background: #fff;
     padding: 20px;
     text-align: center;
     margin-top: 5px;
     border-radius: 10px;
-    max-width: 100%;
+}
+
+.item-contenido h3{
+    color: orange;
 }
 
 .contenedor-img {
     position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
 }
 
 .overlay #btn-cerrar-popup {
@@ -213,9 +207,15 @@ footer .redes-sociales a {
     transition: .3s ease all;
 }
 
-footer .redes-sociales .twitter {background: #1da1f2;}
-footer .redes-sociales .github {background: #171515;}
-footer .redes-sociales .linkedin {background: #0e76a8;}
+footer .redes-sociales .twitter {
+    background: #1da1f2;
+}
+footer .redes-sociales .github {
+    background: #171515;
+}
+footer .redes-sociales .linkedin {
+    background: #0e76a8;
+}
 
 footer .redes-sociales a i {
     font-size: 20px;
@@ -239,11 +239,25 @@ footer .creado-por {
     margin-bottom: 40px;
     text-align: center;
     font-size: 14px;
-    color: #9b9b9b;
+    padding: 10px;
 }
 
-footer .creado-por a {color: orange;}
-footer .creado-por a:hover {text-decoration: underline;}
+footer .creado-por p {
+    color: white;
+    font-size: 18px;
+}
+footer .creado-por a {
+    color: orange;
+    font-size: 18px;
+}
+footer .creado-por a:hover {
+    text-decoration: underline;
+}
+
+footer .legal {
+    text-align: center;
+    font-size: 14px;
+}
 
 /*------------------------*/
 /*------ footer ------------*/
@@ -253,8 +267,7 @@ footer .creado-por a:hover {text-decoration: underline;}
     .grid .item {
         width: calc(50% - 30px);
     }
-    
-    header .barra-busqueda {
-        width: 100%;
+    .footer .redes-sociales{
+        width: 50%;
     }
 }

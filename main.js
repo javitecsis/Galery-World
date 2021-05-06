@@ -4,25 +4,7 @@ const grid = new Muuri('.grid', {
     }
 });
 
-
-// Se agrega boton de darkMode
-
-var donen = document.querySelector(":root");
-function onOff() {
-	if (document.getElementsByClassName("d-right")[0]) {
-		document
-			.getElementsByClassName("clickOnOrOff")[0]
-			.classList.remove("d-right");
-		donen.style.setProperty("--white", "#fff");
-		donen.style.setProperty("--black", "#0d1117");
-	} else {
-		document.getElementsByClassName("clickOnOrOff")[0].classList.add("d-right");
-		donen.style.setProperty("--white", "#0d1117");
-		donen.style.setProperty("--black", "#fff");
-	}
-};
-
-// revisar codigo por error
+//cargada de imagenes -grid
 
 window.addEventListener('load', () => {
     grid.refreshItems().layout();
@@ -37,31 +19,23 @@ window.addEventListener('load', () => {
             evento.target.classList.add('activo');
 
             const categoria = evento.target.innerHTML.toLowerCase();
-            categoria === 'todos' ? grid.filter('[data-categoria]') : grid.filter(`[data-categoria="${categoria}"]`);
-            console.log(categoria);
-            
+            categoria === 'inicio' ? grid.filter('[data-categoria]') : grid.filter(`[data-categoria="${categoria}"]`);
+         
         })        
     })
 
-    // Agregar listener para la barra de busqueda.
-document.querySelector('#barra-busqueda').addEventListener('input', (evento) =>{
-    const busqueda = evento.target.value;
-    grid.filter((item) => item.getElement().dataset.etiquetas.includes(busqueda));
-
-});
-
-// Agregamos un listener para las imagenes
-const overlay = document.getElementById('overlay');
-document.querySelectorAll('.grid .item img').forEach((elemento) => {
+    // Agregamos un listener para las imagenes
+    const overlay = document.getElementById('overlay');
+    document.querySelectorAll('.grid .item img').forEach((elemento) => {
         elemento.addEventListener('click', () => {
             const ruta = elemento.getAttribute('src');
             const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
             overlay.classList.add('activo');
             document.querySelector('#overlay img').src = ruta;
             document.querySelector('#overlay .descripcion').innerHTML = descripcion;
-    }); 
-    });
-    //Eventlisterner del boton de cewrrar
+     }); 
+   });
+    //Eventlisterner del boton de cerrar
    document.querySelector('#btn-cerrar-popup').addEventListener('click', () => {
     overlay.classList.remove('activo');        
  });
